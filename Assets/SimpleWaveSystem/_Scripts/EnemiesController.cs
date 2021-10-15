@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 //
-using RehtseStudio.Managers;
+using RehtseStudio.SimpleWaveSystem.Managers;
 
 
-namespace RehtseStudio.Enemy
+namespace RehtseStudio.SimpleWaveSystem.Enemy
 {
 
     public class EnemiesController : MonoBehaviour

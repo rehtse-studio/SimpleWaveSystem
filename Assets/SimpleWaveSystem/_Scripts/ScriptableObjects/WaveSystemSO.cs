@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RehtseStudio.SO
+namespace RehtseStudio.SimpleWaveSystem.SO
 {
 
     [System.Serializable]

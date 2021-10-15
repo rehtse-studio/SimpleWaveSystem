@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-namespace RehtseStudio.Managers
+namespace RehtseStudio.SimpleWaveSystem.Managers
 {
 
     public class SpawnManager : MonoBehaviour
@@ -33,24 +33,23 @@ namespace RehtseStudio.Managers
         //Getting Reference to the WaveSystemManager Script and PoolManager Script
         private WaveSystemManager _waveSystemManager;
         private PoolManager _poolManager;
+        private UIManager _uiManager;
 
         private void Start()
         {
 
             _waveSystemManager = GetComponent<WaveSystemManager>();
             _poolManager = GetComponent<PoolManager>();
+            _uiManager = GameObject.Find("UI").GetComponent<UIManager>();
 
             _objectSpawnWaitForSeconds = new WaitForSeconds(_waitForSecondsBetweenObjectSpawn);
             _nextWaveRoutineWaitForSeconds = new WaitForSeconds(_waitForSecondBetweenWaves);
 
         }
 
-        private void Update()
+        public void StartWave()
         {
-
-            if (Input.GetKeyDown(KeyCode.Space))
-                StartObjectWave();
-
+            StartObjectWave();
         }
 
         private void StartObjectWave()
@@ -99,6 +98,7 @@ namespace RehtseStudio.Managers
                     _waveSystemText.text = "No more Object to spawn";
                     _waveNumber = 0;
                     _objectDestroyed = 0;
+                    _uiManager.ActivateRestartSpawnButton();
                 }
                 else
                 {

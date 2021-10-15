@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 //
-using RehtseStudio.SO;
+using RehtseStudio.SimpleWaveSystem.SO;
 //
 
-namespace RehtseStudio.Managers
+namespace RehtseStudio.SimpleWaveSystem.Managers
 {
 
     public class WaveSystemManager : MonoBehaviour

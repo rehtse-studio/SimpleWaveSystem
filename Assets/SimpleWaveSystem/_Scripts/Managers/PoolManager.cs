@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-namespace RehtseStudio.Managers
+namespace RehtseStudio.SimpleWaveSystem.Managers
 {
 
     public class PoolManager : MonoBehaviour
