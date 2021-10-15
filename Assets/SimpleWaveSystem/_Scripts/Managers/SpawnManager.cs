@@ -109,7 +109,7 @@ namespace RehtseStudio.SimpleWaveSystem.Managers
         }
 
         //You can access this Public Method if you like to change the positon of the object
-        public void ObjectPositoinToSpawn(Vector3 _objPos)
+        public void ObjectPositionToSpawn(Vector3 _objPos)
         {
             _objectPosition = _objPos;
         }
