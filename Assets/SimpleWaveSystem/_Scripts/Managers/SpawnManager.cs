@@ -11,9 +11,9 @@ namespace RehtseStudio.Managers
     {
 
         [Header("Waves properties")]
-        [SerializeField] private int _waveNumber;
-        [SerializeField] private int _currentObjectToSpawnOnScene;
-        [SerializeField] private int _objectDestroyed = 0;
+        private int _waveNumber;
+        private int _currentObjectToSpawnOnScene;
+        private int _objectDestroyed = 0;
 
         [Header("Wait seconds between object spawn")]
         private WaitForSeconds _objectSpawnWaitForSeconds;
@@ -26,6 +26,9 @@ namespace RehtseStudio.Managers
 
         [Header("Wave Text reference")]
         [SerializeField] private Text _waveSystemText;
+
+        [Header("Position / destination where the objects are going to spawn")]
+        [SerializeField] private Vector3 _objectPosition;
 
         //Getting Reference to the WaveSystemManager Script and PoolManager Script
         private WaveSystemManager _waveSystemManager;
@@ -44,8 +47,10 @@ namespace RehtseStudio.Managers
 
         private void Update()
         {
+
             if (Input.GetKeyDown(KeyCode.Space))
                 StartObjectWave();
+
         }
 
         private void StartObjectWave()
@@ -70,7 +75,9 @@ namespace RehtseStudio.Managers
                 var selectedObject = _waveSystemManager.ReturnObjectTypeId(_waveNumber);
                 GameObject newObject = _poolManager.RequestObjectToSpawn(selectedObject);
 
-                newObject.transform.position = Vector3.zero;
+                //You can change the direcction of the object you want to spawn
+                //You can change this part of the code
+                newObject.transform.position = _objectPosition;
                 newObject.SetActive(true);
 
                 yield return _objectSpawnWaitForSeconds;
@@ -99,6 +106,12 @@ namespace RehtseStudio.Managers
                     StartCoroutine(NextWaveRoutine());
                 }
             }
+        }
+
+        //You can access this Public Method if you like to change the positon of the object
+        public void ObjectPositoinToSpawn(Vector3 _objPos)
+        {
+            _objectPosition = _objPos;
         }
 
     }
