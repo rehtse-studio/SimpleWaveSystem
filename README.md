@@ -1,6 +1,5 @@
 # SimpleWaveSystem
-https://drive.google.com/file/d/1zoZWVhZRqkp2Ul0UJBHlqbu0cfURwAX4/view?usp=sharing
-
+![image](https://drive.google.com/uc?export=view&id=1zoZWVhZRqkp2Ul0UJBHlqbu0cfURwAX4)
 A simple wave system on Unity for whatever you want to spawn enemies, items, etc.
 
 
